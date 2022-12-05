@@ -1,0 +1,11 @@
+<div
+  class="d-flex justify-content-evenly"
+  [ngStyle]="{ 'background-color': ' hsl(' + album.duration + ', 50%, 50%)' }"
+>
+  <img [src]="src" (mouseenter)="change(true)" (mouseleave)="change(false)" />
+
+  <div>
+    <div>{{ album.title }}</div>
+    <div>{{ album.artist.name | uppercase }}</div>
+  </div>
+</div>

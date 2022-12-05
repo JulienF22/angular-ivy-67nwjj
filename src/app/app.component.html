@@ -1,0 +1,29 @@
+<nav class="navbar bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand">Deezer</a>
+    <form class="d-flex" role="search">
+      <input
+        class="form-control me-2"
+        type="search"
+        placeholder="Search"
+        aria-label="Search"
+        [(ngModel)]="searchText"
+        name="recherche"
+        (keyup)="search()"
+      />
+    </form>
+  </div>
+</nav>
+
+<div
+  style="position: absolute;
+top: 50px; background-color:white"
+>
+  <div *ngFor="let l of list" (click)="getMorceau(l)">
+    {{ l.title }}
+  </div>
+</div>
+
+<div *ngFor="let al of albums">
+  <app-fiche-morceau [album]="al"></app-fiche-morceau>
+</div>
